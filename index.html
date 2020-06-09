@@ -1,61 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<style>
-    .navbar-default .navbar-brand{color: brown;}
-</style>
-<script>
- 
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부트스트랩</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <style>
+    .navbar{margin-bottom:0;}
+
+   .navbar a{color:#563d7c !important;}
+   .jumbotron{
+    background-color:#563d7c !important;
+    padding:60px 0 30px;
+   }
+   .inline-block{display:inline-block;}
+   .jumbotron h1{margin-bottom:30px;}
+   .jumbotron h1 span{
+     border:1px solid White;
+     border-radius: 10%;
+     padding:30px 40px;
+     color:white;
+     font-size:100px;
+   }
+   .jumbotron p{
+     font-size:20px;
+     color:white;
+     margin-bottom:20px;
+   }
+   .jumbotron p a{
+     border:1px solid White;
+     background-color:transparent !important;
+     color:white;
+  }
+  h2{font-size:30px;margin:30px 0;}
+  p.large{font-size:20px;margin:20px 0;}
+  p.mediam{font-size:18px;}
+  p.small{font-size:16px;line-height:24px;}
+  .short_line{margin-top:40px;margin-bottom:50px;}
+  .thumbnail {
+    margin-bottom:40px;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    }
+    h3{font-size:24px;margin-bottom:20px;}
+
+
+
+
+
+
+
+   /* 작은 기기들 (태블릿, 768px 이상) */
+    @media (min-width:768px) {
+      .jumbotron{padding:70px 0 35px;}
+      .jumbotron h1{margin-bottom:40px;}
+      .jumbotron p{font-size:22px;margin-bottom:30px;}
+      h2{font-size:40px;margin-top:40px;}
+      p.large{font-size:22px;margin-top:30px;}
+      p.mediam{font-size:20px;}
+      p.small{font-size:18px;line-height:26px;}
+      h3{font-size:30px;margin-bottom:26px;}
+    }
+
+
+
+
+
+
+    /* 중간 기기들 (데스크탑, 992px 이상) */
+    @media (min-width:992px) {
+      .jumbotron{padding:80px 0 40px;}
+      .jumbotron h1{margin-bottom:50px;}
+      .jumbotron p{font-size:26px;margin-bottom:40px;}
+    }
+
+    /* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+    @media (min-width:1200px) {
+      .jumbotron{padding:90px 0 45px;}
+      .jumbotron h1{margin-bottom:60px;}
+      .jumbotron p{font-size:30px;margin-bottom:50px;}
+    }
+  </style>
+  <script>
+  </script>
 </head>
 <body>
-    <div class="wrap">
-        <header>
-            <div class="navbar navbar-default">
-                <div class="container">
-                 <div class="navbar-header">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-                        <span class="glyphicon glyphicon-menu-hamburger"></span> 
-                     </button>
-                    <a class="navbar-brand" href="index.html">부트스크랩</a>
-                </div>
-                <div class="collapse navbar-collapse" id="mynavbar">
-                   <ul class="nav navbar-nav">
-                       <li><a href="#">시작하기</a></li>
-                       <li class="dropdown">
-                           <a class="dropdown-toggle" data-toggle="dropdown" href="#">부트스크랩기능<span class="caret"></span></a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">CSS</a></li>
-                               <li><a href="#">콤포넌트</a></li>
-                               <li><a href="#">자바스크립트</a></li>
-                               <li><a href="#">맞춤화</a></li>
-                           </ul>
-                        </li>
-                       <li><a><input type="text" class="form-control" placeholder="Search..."></a></li>
-                       <li><a><button type="button" class="btn btn-danger btn-sm">보내기</button></a></li>
-                   </ul>
-                   <ul class="nav navbar-nav navbar-right">
-                       <li><a href="#">전시관</a></li>
-                       <li><a href="#">블로그</a></li>
-                   </ul>
-                    </div>
-                </div>
+  <div class="wrap">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">부트스트랩</a>
+          </div>
+      
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">시작하기</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">콤포넌트</a></li>
+              <li><a href="#">자바스크립트</a></li>
+              <li><a href="#">맞춤화</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">전시관</a></li>
+              <li><a href="#">블로그</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <section class="banner">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="text-center">
+            <span class="inline-block">B</span>
+          </h1>
+          <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1 text-center">부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.</p>
+          <p class="text-center"><a class="btn btn-lg" href="#" role="button">부트스트랩 다운로드</a></p>
+        </div>
+      </div>
+    </section>
+    <section class="section01">
+      <div class="container">
+        <h2 class="text-center">모든사람과 모든곳을 위해 설계되었습니다.</h2>
+        <p class="text-center large">부트스트랩은 프론트엔드 웹개발을 더 빠르고 쉽게 만들어줍니다. 모든 기술 수준의 사람들, 모든 형태의 기기들, 모든 크기의 프로젝트들을 위해 만들어졌습니다.</p>
+        <div class="row">
+          <hr class="short_line col-xs-12 col-sm-2 col-sm-offset-5">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/sass-less.png" alt="sdss-less">
+              <div class="caption">
+                <h3 class="text-center">프리프로세서</h3>
+                <p class="text-center small">부트스트랩은 평범한 CSS 로 제공합니다만, 그것의 소스코드는 2개의 인기있는 CSS 프리프로세서인 Less 와 Sass 를 사용합니다. 신속하게 프리컴파일된 CSS 로 시작하거나 소스를 빌드하세요.</p>
+              </div>
             </div>
-        </header>
-        <section class="banner"></section>
-        <section class="section01"></section>
-        <section class="section02"></section>
-        <footer></footer>
-    </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/devices.png" alt="devices">
+              <div class="caption">
+                <h3 class="text-center">하나의 프레임워크, 모든 기기.</h3>
+                <p class="text-center small">부트스트랩은 웹사이트와 어플리케이션을 단일 코드 베이스로 CSS 미디어 쿼리를 이용하여 휴대폰에서부터 태블릿, 데스크탑까지 쉽고 효과적으로 크기를 조절합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/components.png" alt="components">
+              <div class="caption">
+                <h3 class="text-center">많은 기능들</h3>
+                <p class="text-center small">부트스트랩과 함께, 보통의 HTML 요소들, 맞춤형 HTML 과 CSS 콤포넌트들, 그리고 놀라운 jQuery 플러그인들로 광범위하고 아름다운 문서들을 가질 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr class="short_line col-xs-12 col-sm-2 col-sm-offset-5">
+        </div>
+        <p class="large text-center">부트스트랩은 오픈소스 입니다. 깃허브에서 호스트되고, 개발되고, 유지보수 됩니다.</p>
+        <p class="text-center">
+          <a class="btn btn-success btn-lg" href="#" role="button">깃허브 바로가기</a>
+        </p>
+      </div>
+    </section>
+    <section class="section02">
+      
+    </section>
+    <footer></footer>
 </body>
 </html>
