@@ -12,6 +12,7 @@
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <style>
+    .wrap{overflow: hidden;}
     .navbar{margin-bottom:0;}
 
    .navbar a{color:#563d7c !important;}
@@ -22,9 +23,11 @@
    .inline-block{display:inline-block;}
    .jumbotron h1{margin-bottom:30px;}
    .jumbotron h1 span{
+     width:160px;
+     height:160px;
      border:1px solid White;
      border-radius: 10%;
-     padding:30px 40px;
+     line-height:160px;
      color:white;
      font-size:100px;
    }
@@ -51,11 +54,60 @@
     border-radius:0;
     }
     h3{font-size:24px;margin-bottom:20px;}
-
-
-
-
-
+    .section01,.section02{
+      border-bottom:1px solid #cccccc;
+      padding-bottom:30px;
+    }
+    .section02 .img_box{padding:10px;position:relative;}
+    
+    .section02 .img_box>img{
+      width:100%;
+    }
+    .section02 .img_box>img:hover{
+      animation:exp 0.2s;
+    }
+    @keyframes exp{
+      0%{transform:translate(0px,0px);}
+      10%{transform:translate(10px,10px);}
+      20%{transform:translate(0px,0px);}
+      30%{transform:translate(-10px,-10px);}
+      40%{transform:translate(0px,0px);}
+      50%{transform:translate(5px,5px);}
+      60%{transform:translate(0px,0px);}
+      70%{transform:translate(-5px,-5px);}
+      80%{transform:translate(0px,0px);}
+      90%{transform:translate(2px,2px);}
+      100%{transform:translate(0px,0px);}
+    }
+    
+    .open_btn,.close_btn{cursor:pointer;}
+    .modal-header{border-bottom:none;padding-top:0;padding-bottom:0;}
+    .modal-dialog{width:400px;}
+    .modal_box{
+      padding:0 10px 20px;
+      display:flex;
+      flex-flow:column nowrap;
+    }
+    .modal_box>span{font-size:48px;align-self:flex-end;}
+    .modal_box>img{width:100%;}
+    .section02 .col-xs-12,
+    .section02 .col-sm-6,
+    .section02 .col-md-3{
+      padding-left:0;
+      padding-right:0;
+    }
+    footer{
+      padding:20px 0;
+    }
+    footer .row{
+      padding:10px 0;
+    }
+    a.label{
+      padding:10px;
+      font-size:14px;
+    }
+    small{line-height:0.8em;}
+    span.badge{margin-left:10px;}
 
 
    /* 작은 기기들 (태블릿, 768px 이상) */
@@ -67,7 +119,7 @@
       p.large{font-size:22px;margin-top:30px;}
       p.mediam{font-size:20px;}
       p.small{font-size:18px;line-height:26px;}
-      h3{font-size:30px;margin-bottom:26px;}
+      h3{font-size:30px;margin-bottom:26px;}     
     }
 
 
@@ -79,17 +131,29 @@
     @media (min-width:992px) {
       .jumbotron{padding:80px 0 40px;}
       .jumbotron h1{margin-bottom:50px;}
-      .jumbotron p{font-size:26px;margin-bottom:40px;}
+      .jumbotron p{font-size:26px;margin-bottom:40px;}      
     }
+
+
+
 
     /* 큰 기기들 (큰 데스크탑, 1200px 이상) */
     @media (min-width:1200px) {
       .jumbotron{padding:90px 0 45px;}
       .jumbotron h1{margin-bottom:60px;}
-      .jumbotron p{font-size:30px;margin-bottom:50px;}
+      .jumbotron p{font-size:30px;margin-bottom:50px;}      
     }
+
   </style>
   <script>
+    $(function(){
+      $('.open_btn').click(function(){
+        $(this).next().modal('show');
+      });
+      $('.close_btn').click(function(){
+        $('.modal').modal('hide');
+      });
+    })
   </script>
 </head>
 <body>
@@ -129,7 +193,7 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="text-center">
-            <span class="inline-block">B</span>
+            <span class="inline-block text-center">B</span>
           </h1>
           <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1 text-center">부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.</p>
           <p class="text-center"><a class="btn btn-lg" href="#" role="button">부트스트랩 다운로드</a></p>
@@ -181,9 +245,299 @@
         </p>
       </div>
     </section>
+
     <section class="section02">
-      
+      <div class="container">
+        <h2 class="text-center">부트스트랩으로 만든 패이지</h2>
+        <p class="text-center large">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum odio quis, quia voluptatem quibusdam neque veniam officia. Labore consequuntur repellat dolores illo modi temporibus? Veritatis at nostrum quis ab voluptas.</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal01.png" alt="modal01">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal01.png" alt="modal1">
+                      <h3>모달창</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal02.png" alt="modal02">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal02.png" alt="modal2">
+                      <h3>모달창2</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal03.png" alt="modal03">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal03.png" alt="modal3">
+                      <h3>모달창3</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal04.png" alt="modal04">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal04.png" alt="modal4">
+                      <h3>모달창4</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal05.png" alt="modal05">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal05.png" alt="modal5">
+                      <h3>모달창5</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal06.png" alt="modal06">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal06.png" alt="modal6">
+                      <h3>모달창6</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal07.png" alt="modal07">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal07.png" alt="modal7">
+                      <h3>모달창7</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal08.png" alt="modal08">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal08.png" alt="modal8">
+                      <h3>모달창8</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal09.png" alt="modal09">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal09.png" alt="modal9">
+                      <h3>모달창9</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal10.png" alt="modal10">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal10.png" alt="modal10">
+                      <h3>모달창10</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal11.png" alt="modal11">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal11.png" alt="modal11">
+                      <h3>모달창11</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal12.png" alt="modal12">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal12.png" alt="modal12">
+                      <h3>모달창12</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal13.png" alt="modal13">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal13.png" alt="modal13">
+                      <h3>모달창13</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal14.png" alt="modal14">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal14.png" alt="modal14">
+                      <h3>모달창14</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal15.png" alt="modal15">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal15.png" alt="modal15">
+                      <h3>모달창15</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal16.png" alt="modal16">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal16.png" alt="modal16">
+                      <h3>모달창16</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
+          </div>
+        </div>
+      </div>
     </section>
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <a href="#" class="label label-primary col-xs-2 col-xs-offset-4">github<span class="badge">10</span></a>
+          <a href="#" class="label label-success col-xs-2 col-xs-offset-1">twitter<span class="badge">2</span></a>
+          <a href="#" class="label label-info col-xs-2 col-xs-offset-1">facebook<span class="badge">8</span></a>
+        </div>
+        <div class="row">
+          <p class="col-xs-8 col-xs-offset-2 text-center">
+            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis nulla ratione deserunt? Nulla neque nostrum quas esse perferendis, eaque recusandae architecto id impedit iure dolorem laborum. Deleniti ipsum molestiae esse.Nam, ex doloribus. Odit veniam iure quasi voluptatum, laboriosam, libero ea consequatur, quam placeat provident suscipit expedita ipsam repellat dolorum minus blanditiis itaque eos laborum. Nam optio quae sint asperiores.</small>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2 text-center"><a href="#">처음으로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">두번째로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">세번째로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">네번째로</a></div>
+        </div>
+
+      </div>
+    </footer>
 </body>
 </html>
